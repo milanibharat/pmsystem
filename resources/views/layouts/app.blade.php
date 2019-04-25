@@ -28,6 +28,8 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('sass/example.scss') }}" rel="stylesheet">
+        
     </head>
     <body>
         <div id="app">
@@ -59,9 +61,21 @@
                             </li>
                             @endif
                             @else
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('companies.index') }}">My Companies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tasks.index') }}">Tasks</a>
+                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} 
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -84,6 +98,8 @@
 
             <main class="py-4">
                 <div class='container'>
+                    @include('partial.errors')
+                    @include('partial.success')
                     <div class='row'>
                         @yield('content')
                     </div>
