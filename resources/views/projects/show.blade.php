@@ -1,59 +1,62 @@
 @extends('layouts.app')
-
 @section('content')
+
 <div class='col-lg-9 col-md-9 col-sm-9 pull-left'>
     <!-- Well -->
     <div class="well well-lg">
         <h1>{{$project->name}}</h1>
         <p class="lead">{{$project->description}}</p>
-        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
     </div>
 
     <!-- Example row of columns -->
-    <div class="row " style='background-color: #fff;margin: 10px;'>
-        <div class='row col-lg-12 col-md-12 col-sm-12' style="background: #fff;margin: 10px;"></div>
-        <div class='row'>
-            <form method='post' action='{{route('comments.store')}}'>
+
+    <div class='row col-lg-12 col-md-12 col-sm-12' style="background: #fff;margin: 10px;">
+
+        <!--
+        <div class='row container-fluid'>
+            <div class='col-lg-12 col-md-12 col-sm-12'>
+                <a href="/projects/create" class='btn btn-primary pull-right btn-sm' style='height: 30px;margin: 10px;'>Add project</a>
+            </div>
+        </div>-->
+        <br />
+        <div class='row container-fluid'>       
+            <form method='post' action="{{route('comments.store')}}">
 
                 {{ csrf_field() }}
 
-                <input type='hidden' name='commentable' value='Project'>
+                <input type='hidden' name='commentable_type' value='App\Project'>
                 <input type='hidden' name='commentable_id' value='{{$project->id}}'>
 
                 <div class='form-group'>
                     <label for='comment-content'>Comment</label>
-                    <textarea placeholder='Enter Description' style='resize: vertical' id='company-content'
-                              name='body' rows="5" spellcheck='false' class='form-control autosize-target text-left'>
+                    <textarea placeholder='Enter Comment' style='resize: vertical' id='comment-content'
+                              name='body' rows="3" spellcheck='false' class='form-control autosize-target text-left'>
                     </textarea>
                 </div>
                 <div class='form-group'>
-                    <label for='comment-content'>Proof of work done (Url)</label>
-                    <textarea placeholder='Enter Url' style='resize: vertical' id='company-content'
-                              name='url' rows="3" spellcheck='false' class='form-control autosize-target text-left'>
+                    <label for='comment-content'>Proof of work done (Url/Screens)</label>
+                    <textarea placeholder='Enter Url' style='resize: vertical' id='comment-content'
+                              name='url' rows="2" spellcheck='false' class='form-control autosize-target text-left'>
                     </textarea>
                 </div>
                 <div class='form-group'>
-                    <input type="submit" value='submit' class='btn btn-primary'>
+                    <input type="submit" value='Submit' class='btn btn-primary'>
                 </div>
             </form>
         </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-4">
-            <a href="/projects/create" class='btn btn-primary pull-right btn-sm' style='height: 30px;'>Add project</a>
-        </div>
-
-
-        {{-- @foreach($project->projects as $project)
-        <div class="col-lg-4 col-md-4 col-sm-4">
-            <h2>{{$project->name}}</h2>
+    </div>
+    
+    @foreach($project->users as $user)
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h2>{{$project->name}}</h2>
         <p class="text-danger">{{$project->description}}</p>
         <p><a class="btn btn-primary" href="/projects/{{$project->id}}" role="button">View Project »</a></p>
     </div>
-    @endforeach  --}}
-
-
+    @endforeach
 </div>
-</div>
+
+ 
+
 
 <div class="col-sm-3 col-md-3 col-lg-3 pull-right">
     <div class="sidebar-module">
@@ -89,4 +92,6 @@
         </ol>
     </div>
 </div>
+
+
 @endsection

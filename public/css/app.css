@@ -1965,11 +1965,8 @@ pre code {
 }
 
 .form-control {
-  display: block;
+  display: inline-block;
   width: 100%;
-  height: calc(1.6em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
   color: #495057;
@@ -10705,6 +10702,10 @@ a.text-dark:focus {
   font-size: 18px;
 }
 
+h1 {
+  font-size: 50px;
+}
+
 h4 {
   font-size: 18px;
 }
@@ -10727,5 +10728,9 @@ input {
 
 textarea {
   font-size: 14px;
+}
+
+.lead {
+  font-size: 20px;
 }
 

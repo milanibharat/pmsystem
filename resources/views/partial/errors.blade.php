@@ -4,7 +4,7 @@
         <span aria-hidden='true'>&times;</span>
     </button>
     @foreach ($errors->all() as $error)
-    <li><strong>
+    <li><strong style="font-size: 18px;font-weight: normal;">
             {!! $error !!}
         </strong></li>
     @endforeach

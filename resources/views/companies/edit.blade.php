@@ -16,9 +16,9 @@
                 <input placeholder='Enter Name' 
                        id='company-name'
                        required
+                       class="form-control"
                        name='name'
-                       spellcheck='false'
-                       class='form-control'
+                       spellcheck='false'                      
                        value='{{$company->name}}'
                        />
             </div>
@@ -29,20 +29,19 @@
                           id='company-content'
                           name='description'
                           rows="5"
+                          cols="105"
                           spellcheck='false'
                           class='form-control autosize-target text-left'>
                     {{$company->description}}</textarea>
-
             </div>
             <div class='form-group'>
                 <input type="submit" value='submit' class='btn btn-primary'>
             </div>
         </form>
-
     </div>
 </div>
 
-<div class="col-sm-3 col-md-3 col-lg-3 pull-right">
+<div class="col-sm-2 col-md-2 col-lg-2 pull-right">
     <div class="sidebar-module">
         <h4>Actions</h4>
         <ol class="list-unstyled">

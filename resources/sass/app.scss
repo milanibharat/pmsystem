@@ -9,8 +9,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 .card{
     border: 2px solid #3071ab;
@@ -41,6 +41,9 @@
 .list-group{
     font-size: 18px;
 }
+h1{
+    font-size: 50px;
+}
 h4{
     font-size: 18px;
 }
@@ -58,4 +61,7 @@ input{
 }
 textarea{
     font-size: 14px;
+}
+.lead{
+    font-size: 20px;
 }

@@ -17,14 +17,13 @@
             <div class='form-group'>
                 <label for='company-content'>Description</label>
                 <textarea placeholder='Enter Description' style='resize: vertical' id='company-content'
-                          name='description' rows="5" spellcheck='false' class='form-control autosize-target text-left'>
+                          name='description' rows="5" cols="105" spellcheck='false' class='form-control autosize-target text-left'>
                 </textarea>
             </div>
             <div class='form-group'>
                 <input type="submit" value='submit' class='btn btn-primary'>
             </div>
         </form>
-
     </div>
 </div>
 
