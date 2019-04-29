@@ -65,3 +65,27 @@ textarea{
 .lead{
     font-size: 20px;
 }
+
+.thumbnail{
+    display: inline-block;
+    border:transparent;
+}
+a{
+    font-size: 14px;
+}
+.thumbnail img{
+    height: 110px;
+    width:120px;
+}
+
+.panel-body .text-left{
+    font-size: 10px;
+}
+
+.thumbnail{
+    text-decoration: none;
+}
+
+.thumbnail img{
+    border-radius: 50%;
+}

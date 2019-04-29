@@ -1965,8 +1965,11 @@ pre code {
 }
 
 .form-control {
-  display: inline-block;
+  display: block;
   width: 100%;
+  height: calc(1.6em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
   color: #495057;
@@ -10732,5 +10735,31 @@ textarea {
 
 .lead {
   font-size: 20px;
+}
+
+.thumbnail {
+  display: inline-block;
+  border: transparent;
+}
+
+a {
+  font-size: 14px;
+}
+
+.thumbnail img {
+  height: 110px;
+  width: 120px;
+}
+
+.panel-body .text-left {
+  font-size: 10px;
+}
+
+.thumbnail {
+  text-decoration: none;
+}
+
+.thumbnail img {
+  border-radius: 50%;
 }
 
