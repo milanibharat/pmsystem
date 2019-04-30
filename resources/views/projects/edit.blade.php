@@ -23,7 +23,7 @@
                    />
         </div>
         <div class='form-group'>
-            <label for='project-content'>Description</label>
+            <label for='project-content'><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i> Description</label>
             <textarea placeholder='Enter Description' 
                       style='resize: vertical'
                       id='project-content'
@@ -35,7 +35,7 @@
 
         </div>
         <div class='form-group'>
-            <input type="submit" value='submit' class='btn btn-primary'>
+            <input type="submit" value='Submit' class='btn btn-primary'>
         </div>
     </form>
 </div>

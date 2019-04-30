@@ -11,6 +11,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://use.fontawesome.com/b74c93e4e3.js"></script>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,7 +30,7 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('sass/example.scss') }}" rel="stylesheet">
-        
+
     </head>
     <body>
         <div id="app">
@@ -61,21 +62,41 @@
                             </li>
                             @endif
                             @else
-                            
-                            
+
+
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('companies.index') }}">My Companies</a>
+                                <a class="nav-link" href="{{ route('companies.index') }}"><i class="fa fa-building" aria-hidden="true"></i> My Companies</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
+                                <a class="nav-link" href="{{ route('projects.index') }}"><i class="fa fa-product-hunt" aria-hidden="true"></i> Projects</a>
                             </li>
+
+
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tasks.index') }}">Tasks</a>
+                                <a class="nav-link" href="{{ route('tasks.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks</a>
                             </li>
-                            
+
+                            @if(Auth::user()->role_id==1)
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} 
+                                    <i class="fa fa-user" aria-hidden="true"></i> Admin 
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('projects.index') }}"><i class="fa fa-product-hunt" aria-hidden="true"></i> All Projects</a>
+                                    <a class="nav-link" href="{{ route('users.index') }}"><i class="fa fa-user" aria-hidden="true"></i> All Users</a>
+                                    <a class="nav-link" href="{{ route('tasks.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i> All Tasks</a>
+                                    <a class="nav-link" href="{{ route('companies.index') }}"><i class="fa fa-building" aria-hidden="true"></i> All Companies</a>
+                                    <a class="nav-link" href="{{ route('roles.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i> All Roles</a>
+                                </div>
+                            </li>
+
+                            @endif
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->first_name }}       
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -83,6 +104,8 @@
                                        onclick="event.preventDefault();
     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -106,5 +129,6 @@
                 </div>
             </main>
         </div>
+
     </body>
 </html>

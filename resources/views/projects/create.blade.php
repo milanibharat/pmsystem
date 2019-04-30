@@ -21,7 +21,7 @@
 
             @if($companies != null)
             <div class='form-group'>
-                <label for='company-content'>Select Company</label>
+                <label for='company-content'><i class="fa fa-building" aria-hidden="true"></i> Select Company </label>
                 <select name="company_id" class='form-control'>
                     @foreach($companies as $company)
                     <option value="{{$company->id}}">{{$company->name}}</option>
@@ -37,7 +37,7 @@
                 </textarea>
             </div>
             <div class='form-group'>
-                <input type="submit" value='submit' class='btn btn-primary'>
+                <input type="submit" value='Submit' class='btn btn-primary'>
             </div>
         </form>
     </div>
@@ -47,7 +47,7 @@
     <div class="sidebar-module">
         <h4>Actions</h4>
         <ol class="list-unstyled">
-            <li><a href="/projects">My Projects</a></li>
+            <li><a href="/projects"><i class="fa fa-product-hunt" aria-hidden="true"></i>My Projects</a></li>
 
         </ol>
     </div>

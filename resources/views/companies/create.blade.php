@@ -21,7 +21,7 @@
                 </textarea>
             </div>
             <div class='form-group'>
-                <input type="submit" value='submit' class='btn btn-primary'>
+                <input type="submit" value='Submit' class='btn btn-primary'>
             </div>
         </form>
     </div>
@@ -31,7 +31,7 @@
     <div class="sidebar-module">
         <h4>Actions</h4>
         <ol class="list-unstyled">
-            <li><a href="/companies">My Companies</a></li>
+            <li><a href="/companies"><i class="fa fa-building" aria-hidden="true"></i>My Companies</a></li>
 
         </ol>
     </div>
