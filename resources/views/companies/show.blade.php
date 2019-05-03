@@ -10,8 +10,8 @@
 
 
     <div class="row " style='background-color: #fff;margin: 10px;'>
-        <div class='row col-lg-12 col-md-12 col-sm-12' style="background: #fff;margin: 10px;">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class='row col-lg-12 col-md-12 col-sm-12' >
+            <div class="col-lg-12 col-md-12 col-sm-12" style="background: #fff;margin-top: 10px;">
                 <a href="/projects/create/{{$company->id}}" class='btn btn-primary pull-right btn-sm' style='height: 30px;'>Add project</a>
             </div>
         </div>

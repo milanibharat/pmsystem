@@ -1,5 +1,5 @@
 @if(isset($errors)&&count($errors)>0)
-<div class='alert alert-dismissible alert-danger'>
+<div class='col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-offset-3 alert alert-dismissible alert-danger'>
     <button type='button' class='close' data-dismiss='alert' aria-label='close'>
         <span aria-hidden='true'>&times;</span>
     </button>

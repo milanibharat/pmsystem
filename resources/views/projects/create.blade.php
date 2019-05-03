@@ -37,7 +37,7 @@
                 </textarea>
             </div>
             <div class='form-group'>
-                <input type="submit" value='Submit' class='btn btn-primary'>
+                <input type="submit" value='Submit' class='form-control btn btn-primary' style="color: #fff">
             </div>
         </form>
     </div>

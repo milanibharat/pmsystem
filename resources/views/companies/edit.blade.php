@@ -35,7 +35,7 @@
                     {{$company->description}}</textarea>
             </div>
             <div class='form-group'>
-                <input type="submit" value='submit' class='btn btn-primary'>
+                <input type="submit" value='submit' class='form-control btn btn-primary' style="color: #fff">
             </div>
         </form>
     </div>

@@ -7,24 +7,24 @@
             <article class="row ">
                 <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
                     <figure class="thumbnail">
-                        <img class="img-responsive" src="/images/america.jpg" /><br />
-                        <figcaption class="text-left">
+                        <img class="img-responsive" src="/images/america.jpg" ><br />
+                        <figcaption class="text-left" >
                             <a href="users/{{$comment->user->id}}">
                                 {{$comment->user->first_name}}
                                 {{$comment->user->last_name}}<br />
-                                <i class="fa fa-envelope" aria-hidden="true"> {{$comment->user->email}}</i> 
+                                <i class="fa fa-envelope" aria-hidden="true">{{$comment->user->email}}</i> 
                             </a>
                         </figcaption>
 
                     </figure>
                 </div>
-                <div class="col-md-7 col-sm-7 col-lg-7">
+
+                <div class="col-md-5 col-sm-5 col-lg-7 col-xs-5">
                     <div class="panel panel-default arrow left">
                         <div class="panel-body">
                             <header class="text-left">
-
-
-                                <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>Commented on:  {{$comment->created_at}}</time>
+                                <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-calendar-times-o " aria-hidden="true"></i>
+                                    Commented on:  {{$comment->created_at}}</time>
                             </header>
                             <div class="comment-post">
                                 <p>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Project;
 use App\Company;
 use App\User;
+use App\ProjectUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,9 +23,34 @@ class ProjectsController extends Controller {
         }
         return view('auth.login');
     }
-    
-    public function adduser() {
-        
+
+    public function adduser(Request $request) {
+        //add user to project
+        $project = Project::find($request->input('project_id'));
+          if (Auth::user()->id == $project->user_id) {
+            $user = User::where('email', $request->input('email'))->first();
+           
+            //to check if user already exists or not
+             $projectUser= ProjectUser::where('user_id',$user->id)
+                                        ->where('project_id',$project->id)
+                                        ->first(); 
+             
+             //if user already exists  then termiate/exit
+             if($projectUser){
+                 return redirect()->route('projects.show', ['project'=>$project->id])
+                        ->with('success', $request->input('email') . ' already exists');
+             }
+             
+             
+            if ($user && $project) {
+                $project->users()->attach($user->id);   //used of toggle instead of attach (do not use $projectUser if using this)
+                return redirect()->route('projects.show', ['project'=>$project->id])
+                        ->with('success', $request->input('email') . ' added to project Successfully');
+            }
+        }
+        return redirect()->route('projects.show',['project'=>$project->id])
+                ->with('errors',' Error adding user to project');
+   
     }
 
     /**
@@ -34,11 +60,11 @@ class ProjectsController extends Controller {
      */
     public function create($company_id = null) {
         //
-        $companies=null;
-        if(!$company_id){
-            $companies=Company::where('user_id',  Auth::user()->id)->get();
+        $companies = null;
+        if (!$company_id) {
+            $companies = Company::where('user_id', Auth::user()->id)->get();
         }
-        return view('projects.create', ['company_id' => $company_id,'companies'=>$companies]);
+        return view('projects.create', ['company_id' => $company_id, 'companies' => $companies]);
     }
 
     /**
@@ -74,8 +100,8 @@ class ProjectsController extends Controller {
     public function show(Project $project) {
         //$project=  Project::where('id',$project->id)->first();
         $project = Project::find($project->id);
- $comments = $project->comments;
-        return view('projects.show', ['project' => $project,'comments'=>$comments]);
+        $comments = $project->comments;
+        return view('projects.show', ['project' => $project, 'comments' => $comments]);
     }
 
     /**

@@ -25,6 +25,11 @@
 }
 .navbar-brand{
     font-size: 25px;
+    padding:15px;
+}
+.navbar{
+    margin-bottom: 0;
+    padding:15px;
 }
 .ml-auto{
     font-size: 16px;
@@ -91,16 +96,66 @@ a{
 }
 
 .form-control {
-  display: block;
-  width: 100%;
-  height: calc(1.6em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f8fafc;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #103873;
+    color: #fff;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    padding: 10px;
+}
+.comment-date{
+    font-size: 12px;
+}
+
+.btn .register{
+
+}
+.navi a{
+    color: #fff;
+}
+
+.navi i{
+    font-size: 24px;
+}
+.navi span{
+    font-size: 24px;
+}
+.navi .nav-item a{
+    font-size: 17px;
+}
+.navi li{
+    padding: 10px;
+}
+
+.dropdown-menu-right a{
+    color: black;
 }

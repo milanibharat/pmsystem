@@ -1,5 +1,5 @@
 @if(session()->has('success'))
-<div class='alert alert-dismissible alert-success'>
+<div class='col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-offset-3 alert alert-dismissible alert-success'>
     <button type='button' class='close' data-dismiss='alert' aria-label='close'>
         <span aria-hidden='true'>&times;</span>
     </button>

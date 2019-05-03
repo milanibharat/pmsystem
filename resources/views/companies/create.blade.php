@@ -5,7 +5,7 @@
     <h1>Create New Company</h1>
 
     <!-- Example row of columns -->
-    <div class="row col-lg-12 col-md-12 col-sm-12">
+    <div class="row col-lg-12 col-md-11 col-sm-11">
         <form method='post' action='{{route('companies.store')}}'>
 
             {{ csrf_field() }}
@@ -21,7 +21,7 @@
                 </textarea>
             </div>
             <div class='form-group'>
-                <input type="submit" value='Submit' class='btn btn-primary'>
+                <input type="submit" value='Submit' class='form-control btn btn-primary' style="color: #fff">
             </div>
         </form>
     </div>

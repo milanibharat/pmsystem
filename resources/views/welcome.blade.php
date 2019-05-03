@@ -65,7 +65,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-            
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -90,7 +90,7 @@
 
             <div class="container-fluid image">
                 <div class="title m-b-md">
-                    <img src="images\background.png" alt="Image Not Found" style="width:100%;height: auto;">
+                    <img src="images\background.png" alt="Image Not Found" style="width:100%;height: 100%;">
                     <div class="centered">
                         <h1 style="font-size: 300%;">PROJECT MANAGEMENT SYSTEM</h1>
                     </div>
