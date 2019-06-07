@@ -12,7 +12,6 @@ class Task extends Model {
         'user_id',
         'company_id',
         'days',
-        'hours',
     ];
 
     public function project() {

@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
+        "garypegeot/gravity-forms-api-client": "^0.0.2",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "timehunter/laravel-google-recaptcha-v3": "^2.2"

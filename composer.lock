@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b667ff7ae500e09a7ba0b8cf70a2ac19",
+    "content-hash": "d5b12c167d8333eb6f5f2b9d194791d1",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -370,6 +370,44 @@
                 "trusted proxy"
             ],
             "time": "2019-01-10T14:06:47+00:00"
+        },
+        {
+            "name": "garypegeot/gravity-forms-api-client",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GaryPEGEOT/gravity-forms-api-client.git",
+                "reference": "36154ed96c42b4cabd18069a58f97353e748328c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GaryPEGEOT/gravity-forms-api-client/zipball/36154ed96c42b4cabd18069a58f97353e748328c",
+                "reference": "36154ed96c42b4cabd18069a58f97353e748328c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GaryPegeot\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gary",
+                    "email": "garypegeot@gmail.com"
+                }
+            ],
+            "description": "Client PHP for accessing Gravity Forms Web API",
+            "time": "2016-02-19T20:29:17+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

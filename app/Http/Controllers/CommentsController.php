@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use GaryPEGEOT\GravityFormsAPI\Client;
 
-class CommentsController extends Controller
-{
+class CommentsController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -23,9 +23,13 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function url() {
+        $url = 'https://stormy-serval.w5.gravitydemo.com';
+        $key = 'ck_c3f7cd48ed6c8720194a372701172b241f9058a4';
+        $secret = 'cs_d2042e593e204c087e30b9bf081756abecc93f0f';
+        $client = new Client($url, $key, $secret);
+        $entries = $client->getFormEntries(1);
+        var_dump($entries);
     }
 
     /**
@@ -34,22 +38,21 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        if(Auth::check()){
-            $comment=Comment::create([
-                'body'=>$request->input('body'),
-                'url'=>$request->input('url'),
-                'commentable_id'=>$request->input('commentable_id'),
-                'commentable_type'=>$request->input('commentable_type'),
-                'user_id'=>  Auth::user()->id
+    public function store(Request $request) {
+        if (Auth::check()) {
+            $comment = Comment::create([
+                        'body' => $request->input('body'),
+                        'url' => $request->input('url'),
+                        'commentable_id' => $request->input('commentable_id'),
+                        'commentable_type' => $request->input('commentable_type'),
+                        'user_id' => Auth::user()->id
             ]);
-            
-            if($comment){
-                return back()->with('success','Comment created successfully');                     
+
+            if ($comment) {
+                return back()->with('success', 'Comment created successfully');
             }
         }
-        return back()->withInput()->with('errors','Error creating new comment');
+        return back()->withInput()->with('errors', 'Error creating new comment');
     }
 
     /**
@@ -58,8 +61,7 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
-    {
+    public function show(Comment $comment) {
         //
     }
 
@@ -69,8 +71,7 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
-    {
+    public function edit(Comment $comment) {
         //
     }
 
@@ -81,8 +82,7 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
-    {
+    public function update(Request $request, Comment $comment) {
         //
     }
 
@@ -92,8 +92,8 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
-    {
+    public function destroy(Comment $comment) {
         //
     }
+
 }
