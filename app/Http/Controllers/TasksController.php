@@ -6,7 +6,7 @@ use App\Task;
 use App\Project;
 use App\Company;
 use App\User;
-use App\ProjectUser;
+use App\TaskUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,30 +28,29 @@ class TasksController extends Controller {
     public function adduser(Request $request) {
         //add user to project
         $task = Task::find($request->input('task_id'));
-          if (Auth::user()->id == $task->user_id) {
+        if (Auth::user()->id == $task->user_id) {
             $user = User::where('email', $request->input('email'))->first();
-           
+
             //to check if user already exists or not
-             $taskUser= TaskUser::where('user_id',$user->id)
-                                        ->where('task_id',$task->id)
-                                        ->first(); 
-             
-             //if user already exists  then termiate/exit
-             if($taskUser){
-                 return redirect()->route('tasks.show', ['task'=>$task->id])
-                        ->with('success', $request->input('email') . ' already exists');
-             }
-             
-             
+            $taskUser = TaskUser::where('user_id', $user->id)
+                    ->where('task_id', $task->id)
+                    ->first();
+
+            //if user already exists  then termiate/exit
+            if ($taskUser) {
+                return redirect()->route('tasks.show', ['task' => $task->id])
+                                ->with('success', $request->input('email') . ' already exists');
+            }
+
+
             if ($user && $task) {
                 $task->users()->attach($user->id);   //used of toggle instead of attach (do not use $taskUser if using this)
-                return redirect()->route('tasks.show', ['task'=>$task->id])
-                        ->with('success', $request->input('email') . ' added to task Successfully');
+                return redirect()->route('tasks.show', ['task' => $task->id])
+                                ->with('success', $request->input('email') . ' added to task Successfully');
             }
         }
-        return redirect()->route('tasks.show',['task'=>$task->id])
-                ->with('errors',' Error adding user to task');
-   
+        return redirect()->route('tasks.show', ['task' => $task->id])
+                        ->with('errors', ' Error adding user to task');
     }
 
     /**
@@ -59,13 +58,13 @@ class TasksController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($company_id = null) {
+    public function create($project_id = null) {
         //
-        $companies = null;
-        if (!$company_id) {
-            $companies = Company::where('user_id', Auth::user()->id)->get();
+        $projects = null;
+        if (!$project_id) {
+            $projects = Project::where('user_id', Auth::user()->id)->get();
         }
-        return view('tasks.create', ['company_id' => $company_id, 'companies' => $companies]);
+        return view('tasks.create', ['project_id' => $project_id, 'projects' => $projects]);
     }
 
     /**
@@ -78,8 +77,7 @@ class TasksController extends Controller {
         if (Auth::check()) {
             $task = Task::create([
                         'name' => $request->input('name'),
-                        'description' => $request->input('description'),
-                        'company_id' => $request->input('company_id'),
+                        'project_id' => $request->input('project_id'),
                         'user_id' => Auth::user()->id
                             //'user_id'=>$request->user()->id
             ]);
@@ -129,7 +127,6 @@ class TasksController extends Controller {
         $taskUpdate = Task::where('id', $task->id)
                 ->update([
             'name' => $request->input('name'),
-            'description' => $request->input('description')
         ]);
 
         if ($taskUpdate) {

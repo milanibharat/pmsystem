@@ -5,7 +5,6 @@
     <!-- Well -->
     <div class="well well-lg">
         <h1>{{$task->name}}</h1>
-        <p class="lead">{{$task->description}}</p>
     </div>
 
     <!-- Example row of columns -->
@@ -89,7 +88,7 @@
         <br />
         <h4>Team Members</h4>
         <ol class="list-unstyled" id="member-list">
-            @foreach($project->users as $user)
+            @foreach($task->users as $user)
             <li><a href="#"> {{ $user->email }} </a></li>
             @endforeach
         </ol>

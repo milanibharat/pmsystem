@@ -22,18 +22,7 @@
                    value='{{$task->name}}'
                    />
         </div>
-        <div class='form-group'>
-            <label for='task-content'><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i> Description</label>
-            <textarea placeholder='Enter Description' 
-                      style='resize: vertical'
-                      id='task-content'
-                      name='description'
-                      rows="5"
-                      spellcheck='false'
-                      class='form-control'>
-                {{$task->description}}</textarea>
-
-        </div>
+        
         <div class='form-group'>
             <input type="submit" value='Submit' class='form-control btn btn-primary' style="color: #fff">
         </div>

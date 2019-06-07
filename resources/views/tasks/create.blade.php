@@ -15,27 +15,21 @@
                 <input class='form-control' placeholder='Enter Name' id='task-name' name='name' spellcheck='false'  required/>
             </div>
 
-            @if($companies == null)
-            <input class="form-control" name='company_id' type='hidden' value='{{$company_id}}'/>
+            @if($projects == null)
+            <input class="form-control" name='project_id' type='hidden' value='{{$project_id}}'/>
             @endif
 
-            @if($companies != null)
+            @if($projects != null)
             <div class='form-group'>
-                <label for='company-content'><i class="fa fa-building" aria-hidden="true"></i> Select Company </label>
-                <select name="company_id" class='form-control'>
-                    @foreach($companies as $company)
-                    <option value="{{$company->id}}">{{$company->name}}</option>
+                <label for='project-content'><i class="fa fa-product-hunt" aria-hidden="true"></i> Select Project </label>
+                <select name="project_id" class='form-control'>
+                    @foreach($projects as $project)
+                    <option value="{{$project->id}}">{{$project->name}}</option>
                     @endforeach
                 </select>
             </div>
             @endif
-
-            <div class='form-group'>
-                <label for='task-content'>Description</label>
-                <textarea placeholder='Enter Description' style='resize: vertical' id='task-content'
-                          name='description' rows="5" cols="105"  spellcheck='false' class='form-control autosize-target text-left'>
-                </textarea>
-            </div>
+            
             <div class='form-group'>
                 <input type="submit" value='Submit' class='form-control btn btn-primary' style="color: #fff">
             </div>
