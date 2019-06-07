@@ -76,7 +76,7 @@
                 <form id='add-user' action="{{route('tasks.adduser')}}"
                       method='post'>
                     {{csrf_field()}}
-                    <input class="form-control" name = "task_id" id="project_id" value="{{$task->id}}" type="hidden">
+                    <input class="form-control" name = "task_id" id="task_id" value="{{$task->id}}" type="hidden">
                     <input type="text" class="form-control" placeholder="Email" style="height: 30px;" id="email" name="email">
                     <br />
                     <span class="input-group-btn">
